@@ -113,7 +113,9 @@ centerTitle:true,
                       backgroundColor: Colors.green,
                       textStyle: const TextStyle(fontSize: 20)),
                   child: Text('%', style: TextStyle(fontSize: 20.0),),
-                  onPressed: () {},
+                  onPressed: () {
+                    _controller.text=_controller.text+"%";
+                  },
                 ),
               ),
               Container(
@@ -126,7 +128,9 @@ centerTitle:true,
                       backgroundColor: Colors.green,
                       textStyle: const TextStyle(fontSize: 20)),
                   child: Text('/', style: TextStyle(fontSize: 20.0),),
-                  onPressed: () {},
+                  onPressed: () {
+                    _controller.text=_controller.text+"/";
+                  },
                 ),
               ),
           ],
@@ -149,7 +153,7 @@ centerTitle:true,
                       child: Text('7', style: TextStyle(fontSize: 20.0),),
                       onPressed: () {
     setState(() {
-      _controller.text="2";
+      _controller.text=_controller.text+"7";
 
     });
 
@@ -166,7 +170,12 @@ centerTitle:true,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('8', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          _controller.text=_controller.text+"8";
+
+                        });
+                      },
                     ),
                   ),
                   Container(
@@ -179,7 +188,9 @@ centerTitle:true,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('9', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        _controller.text=_controller.text+"9";
+                      },
                     ),
                   ),
                   Container(
@@ -192,7 +203,9 @@ centerTitle:true,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('*', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        _controller.text=_controller.text+"*";
+                      },
                     ),
                   ),
                 ],
@@ -213,7 +226,9 @@ centerTitle:true,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('4', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        _controller.text=_controller.text+"4";
+                      },
                     ),
                   ),
                   Container(
@@ -226,7 +241,9 @@ centerTitle:true,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('5', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        _controller.text=_controller.text+"5";
+                      },
                     ),
                   ),
                   Container(
@@ -239,7 +256,9 @@ centerTitle:true,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('6', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        _controller.text=_controller.text+"6";
+                      },
                     ),
                   ),
                   Container(
@@ -252,7 +271,9 @@ centerTitle:true,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('-', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        _controller.text=_controller.text+"-";
+                      },
                     ),
                   ),
 
@@ -275,7 +296,9 @@ centerTitle:true,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('1', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        _controller.text=_controller.text+"1";
+                      },
                     ),
                   ),
                   Container(
@@ -288,7 +311,9 @@ centerTitle:true,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('2', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        _controller.text=_controller.text+"2";
+                      },
                     ),
                   ),
                   Container(
@@ -301,7 +326,9 @@ centerTitle:true,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('3', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        _controller.text=_controller.text+"3";
+                      },
                     ),
                   ),
                   Container(
@@ -314,7 +341,9 @@ centerTitle:true,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('+', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        _controller.text=_controller.text+"+";
+                      },
                     ),
                   ),
 
@@ -337,7 +366,9 @@ centerTitle:true,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('0', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+                        _controller.text=_controller.text+"0";
+                      },
                     ),
                   ),
                   Container(
