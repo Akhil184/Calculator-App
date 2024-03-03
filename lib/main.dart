@@ -34,13 +34,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   TextEditingController _controller = TextEditingController();
 
+  late var add=0;
 
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
-
+centerTitle:true,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
 
         title: Text(widget.title),
@@ -50,6 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
           // in the middle of the parent.
           children: [
             TextField(
+              style:TextStyle(
+                fontSize:50,
+              ),
               controller: _controller,
               decoration: InputDecoration(
                   border: InputBorder.none,
@@ -59,7 +63,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
     Padding(
-    padding:EdgeInsets.only(top:300,left:5),
+    padding:EdgeInsets.only(top:250,left:5),
     child:Row(
             children:[
 
@@ -93,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
     child: Text('+/-', style: TextStyle(fontSize: 20.0),),
     onPressed: () {
       setState(() {
-        _controller.value=2 as TextEditingValue;
+        _controller.text="2";
 //
       });
     },
@@ -143,7 +147,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
                       child: Text('7', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
+                      onPressed: () {
+    setState(() {
+      _controller.text="2";
+
+    });
+
+                      },
                     ),
                   ),
                   Container(
