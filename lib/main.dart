@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Calculator'),
+      home: const MyHomePage(title: 'Calculator',),
     );
   }
 }
@@ -59,22 +59,23 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
 
     Padding(
-    padding:EdgeInsets.only(top:40),
+    padding:EdgeInsets.only(top:300,left:5),
     child:Row(
             children:[
 
             Container(
               margin: EdgeInsets.all(5),
+              width:80,
               child:TextButton(
                 style: TextButton.styleFrom(
                     padding: const EdgeInsets.all(10),
                     foregroundColor: Colors.yellow,
                     backgroundColor: Colors.green,
                     textStyle: const TextStyle(fontSize: 20)),
-                child: Text('1', style: TextStyle(fontSize: 20.0),),
+                child: Text('AC', style: TextStyle(fontSize: 20.0),),
                 onPressed: () {
                   setState(() {
-                    _controller.text="1";
+                    _controller.clear();
 
                   });
                 },
@@ -82,16 +83,17 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
     Container(
     margin: EdgeInsets.all(5),
+    width:80,
     child:TextButton(
       style: TextButton.styleFrom(
           padding: const EdgeInsets.all(10),
           foregroundColor: Colors.yellow,
           backgroundColor: Colors.green,
           textStyle: const TextStyle(fontSize: 20)),
-    child: Text('2', style: TextStyle(fontSize: 20.0),),
+    child: Text('+/-', style: TextStyle(fontSize: 20.0),),
     onPressed: () {
       setState(() {
-        _controller.text="2";
+        _controller.value=2 as TextEditingValue;
 //
       });
     },
@@ -99,79 +101,41 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
               Container(
                 margin: EdgeInsets.all(5),
+                width:80,
                 child:TextButton(
                   style: TextButton.styleFrom(
                       padding: const EdgeInsets.all(10),
                       foregroundColor: Colors.yellow,
                       backgroundColor: Colors.green,
                       textStyle: const TextStyle(fontSize: 20)),
-                  child: Text('3', style: TextStyle(fontSize: 20.0),),
+                  child: Text('%', style: TextStyle(fontSize: 20.0),),
                   onPressed: () {},
                 ),
               ),
               Container(
                 margin: EdgeInsets.all(5),
+                width:80,
                 child:TextButton(
                   style: TextButton.styleFrom(
                       padding: const EdgeInsets.all(10),
                       foregroundColor: Colors.yellow,
                       backgroundColor: Colors.green,
                       textStyle: const TextStyle(fontSize: 20)),
-                  child: Text('4', style: TextStyle(fontSize: 20.0),),
+                  child: Text('/', style: TextStyle(fontSize: 20.0),),
                   onPressed: () {},
-                ),
-              ),
-              Container(
-                margin: EdgeInsets.all(5),
-                child:TextButton(
-                  style: TextButton.styleFrom(
-                      padding: const EdgeInsets.all(10),
-                      foregroundColor: Colors.yellow,
-                      backgroundColor: Colors.green,
-                      textStyle: const TextStyle(fontSize: 20)),
-                  child: Text('+', style: TextStyle(fontSize: 20.0),),
-                  onPressed: () {
-                    setState(() {
-                      _controller.text="+";
-
-                    });
-                  },
                 ),
               ),
           ],
     ),
       ),
             Padding(
-              padding:EdgeInsets.only(top:0),
+              padding:EdgeInsets.only(top:0,left:5),
               child:Row(
                 children:[
 
                   Container(
                     margin: EdgeInsets.all(5),
-                    child:TextButton(
-                      style: TextButton.styleFrom(
-                          padding: const EdgeInsets.all(10),
-                          foregroundColor: Colors.yellow,
-                          backgroundColor: Colors.green,
-                          textStyle: const TextStyle(fontSize: 20)),
-                      child: Text('5', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(5),
-                    child:TextButton(
-                      style: TextButton.styleFrom(
-                          padding: const EdgeInsets.all(10),
-                          foregroundColor: Colors.yellow,
-                          backgroundColor: Colors.green,
-                          textStyle: const TextStyle(fontSize: 20)),
-                      child: Text('6', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(5),
+                    width:80,
                     child:TextButton(
                       style: TextButton.styleFrom(
                           padding: const EdgeInsets.all(10),
@@ -184,6 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Container(
                     margin: EdgeInsets.all(5),
+                    width:80,
                     child:TextButton(
                       style: TextButton.styleFrom(
                           padding: const EdgeInsets.all(10),
@@ -196,26 +161,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Container(
                     margin: EdgeInsets.all(5),
-                    child:TextButton(
-                      style: TextButton.styleFrom(
-                          padding: const EdgeInsets.all(10),
-                          foregroundColor: Colors.yellow,
-                          backgroundColor: Colors.green,
-                          textStyle: const TextStyle(fontSize: 20)),
-                      child: Text('-', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding:EdgeInsets.only(top:0),
-              child:Row(
-                children:[
-
-                  Container(
-                    margin: EdgeInsets.all(5),
+                    width:80,
                     child:TextButton(
                       style: TextButton.styleFrom(
                           padding: const EdgeInsets.all(10),
@@ -228,30 +174,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   Container(
                     margin: EdgeInsets.all(5),
-                    child:TextButton(
-                      style: TextButton.styleFrom(
-                          padding: const EdgeInsets.all(10),
-                          foregroundColor: Colors.yellow,
-                          backgroundColor: Colors.green,
-                          textStyle: const TextStyle(fontSize: 20)),
-                      child: Text('10', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(5),
-                    child:TextButton(
-                      style: TextButton.styleFrom(
-                          padding: const EdgeInsets.all(10),
-                          foregroundColor: Colors.yellow,
-                          backgroundColor: Colors.green,
-                          textStyle: const TextStyle(fontSize: 20)),
-                      child: Text('/', style: TextStyle(fontSize: 20.0),),
-                      onPressed: () {},
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(5),
+                    width:80,
                     child:TextButton(
                       style: TextButton.styleFrom(
                           padding: const EdgeInsets.all(10),
@@ -262,18 +185,179 @@ class _MyHomePageState extends State<MyHomePage> {
                       onPressed: () {},
                     ),
                   ),
+                ],
+              ),
+            ),
+            Padding(
+              padding:EdgeInsets.only(top:0,left:5),
+              child:Row(
+                children:[
+
                   Container(
                     margin: EdgeInsets.all(5),
+                    width:80,
                     child:TextButton(
                       style: TextButton.styleFrom(
                           padding: const EdgeInsets.all(10),
                           foregroundColor: Colors.yellow,
                           backgroundColor: Colors.green,
                           textStyle: const TextStyle(fontSize: 20)),
-                      child: Text('%', style: TextStyle(fontSize: 20.0),),
+                      child: Text('4', style: TextStyle(fontSize: 20.0),),
                       onPressed: () {},
                     ),
                   ),
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    width:80,
+                    child:TextButton(
+                      style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          foregroundColor: Colors.yellow,
+                          backgroundColor: Colors.green,
+                          textStyle: const TextStyle(fontSize: 20)),
+                      child: Text('5', style: TextStyle(fontSize: 20.0),),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    width:80,
+                    child:TextButton(
+                      style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          foregroundColor: Colors.yellow,
+                          backgroundColor: Colors.green,
+                          textStyle: const TextStyle(fontSize: 20)),
+                      child: Text('6', style: TextStyle(fontSize: 20.0),),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    width:80,
+                    child:TextButton(
+                      style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          foregroundColor: Colors.yellow,
+                          backgroundColor: Colors.green,
+                          textStyle: const TextStyle(fontSize: 20)),
+                      child: Text('-', style: TextStyle(fontSize: 20.0),),
+                      onPressed: () {},
+                    ),
+                  ),
+
+                ],
+              ),
+            ),
+
+            Padding(
+              padding:EdgeInsets.only(top:0,left:5),
+              child:Row(
+                children:[
+
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    width:80,
+                    child:TextButton(
+                      style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          foregroundColor: Colors.yellow,
+                          backgroundColor: Colors.green,
+                          textStyle: const TextStyle(fontSize: 20)),
+                      child: Text('1', style: TextStyle(fontSize: 20.0),),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    width:80,
+                    child:TextButton(
+                      style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          foregroundColor: Colors.yellow,
+                          backgroundColor: Colors.green,
+                          textStyle: const TextStyle(fontSize: 20)),
+                      child: Text('2', style: TextStyle(fontSize: 20.0),),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    width:80,
+                    child:TextButton(
+                      style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          foregroundColor: Colors.yellow,
+                          backgroundColor: Colors.green,
+                          textStyle: const TextStyle(fontSize: 20)),
+                      child: Text('3', style: TextStyle(fontSize: 20.0),),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    width:80,
+                    child:TextButton(
+                      style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          foregroundColor: Colors.yellow,
+                          backgroundColor: Colors.green,
+                          textStyle: const TextStyle(fontSize: 20)),
+                      child: Text('+', style: TextStyle(fontSize: 20.0),),
+                      onPressed: () {},
+                    ),
+                  ),
+
+                ],
+              ),
+            ),
+
+            Padding(
+              padding:EdgeInsets.only(top:0,left:5),
+              child:Row(
+                children:[
+
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    width:170,
+                    child:TextButton(
+                      style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          foregroundColor: Colors.yellow,
+                          backgroundColor: Colors.green,
+                          textStyle: const TextStyle(fontSize: 20)),
+                      child: Text('0', style: TextStyle(fontSize: 20.0),),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    width:80,
+                    child:TextButton(
+                      style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          foregroundColor: Colors.yellow,
+                          backgroundColor: Colors.green,
+                          textStyle: const TextStyle(fontSize: 20)),
+                      child: Text('.', style: TextStyle(fontSize: 20.0),),
+                      onPressed: () {},
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.all(5),
+                    width:80,
+                    child:TextButton(
+                      style: TextButton.styleFrom(
+                          padding: const EdgeInsets.all(10),
+                          foregroundColor: Colors.yellow,
+                          backgroundColor: Colors.green,
+                          textStyle: const TextStyle(fontSize: 20)),
+                      child: Text('=', style: TextStyle(fontSize: 20.0),),
+                      onPressed: () {},
+                    ),
+                  ),
+
+
                 ],
               ),
             ),
