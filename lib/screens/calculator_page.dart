@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../models/calculator_func.dart';
+import '../utils/utils.dart';
+
 class Calculator extends StatefulWidget {
   const Calculator({super.key});
 
@@ -10,9 +13,10 @@ class Calculator extends StatefulWidget {
 
 class _CalculatorState extends State<Calculator> {
 
-  TextEditingController _controller = TextEditingController();
 
   late var add=0;
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +36,7 @@ class _CalculatorState extends State<Calculator> {
             style:TextStyle(
               fontSize:50,
             ),
-            controller: _controller,
+            controller:Utils.controller,
             decoration: InputDecoration(
               border: InputBorder.none,
               labelText: '',
@@ -57,7 +61,8 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('AC', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       setState(() {
-                        _controller.clear();
+                        Utils.controller.clear();
+                        Func().add();
 
                       });
                     },
@@ -75,7 +80,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('+/-', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       setState(() {
-                        _controller.text="2";
+                        Utils.controller.text="2";
 //
                       });
                     },
@@ -92,7 +97,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('%', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"%";
+                      Utils.controller.text=Utils.controller.text+"%";
                     },
                   ),
                 ),
@@ -107,7 +112,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('/', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"/";
+                      Utils.controller.text=Utils.controller.text+"/";
                     },
                   ),
                 ),
@@ -131,7 +136,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('7', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       setState(() {
-                        _controller.text=_controller.text+"7";
+                        Utils.controller.text=Utils.controller.text+"7";
 
                       });
 
@@ -150,7 +155,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('8', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       setState(() {
-                        _controller.text=_controller.text+"8";
+                        Utils.controller.text=Utils.controller.text+"8";
 
                       });
                     },
@@ -167,7 +172,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('9', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"9";
+                      Utils.controller.text=Utils.controller.text+"9";
                     },
                   ),
                 ),
@@ -182,7 +187,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('*', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"*";
+                      Utils.controller.text=Utils.controller.text+"*";
                     },
                   ),
                 ),
@@ -205,7 +210,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('4', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"4";
+                      Utils.controller.text=Utils.controller.text+"4";
                     },
                   ),
                 ),
@@ -220,7 +225,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('5', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"5";
+                      Utils.controller.text=Utils.controller.text+"5";
                     },
                   ),
                 ),
@@ -235,7 +240,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('6', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"6";
+                      Utils.controller.text=Utils.controller.text+"6";
                     },
                   ),
                 ),
@@ -250,7 +255,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('-', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"-";
+                      Utils.controller.text=Utils.controller.text+"-";
                     },
                   ),
                 ),
@@ -275,7 +280,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('1', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"1";
+                      Utils.controller.text=Utils.controller.text+"1";
                     },
                   ),
                 ),
@@ -290,7 +295,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('2', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"2";
+                      Utils.controller.text=Utils.controller.text+"2";
                     },
                   ),
                 ),
@@ -305,7 +310,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('3', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"3";
+                      Utils.controller.text=Utils.controller.text+"3";
                     },
                   ),
                 ),
@@ -320,7 +325,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('+', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"+";
+                      Utils.controller.text=Utils.controller.text+"+";
 
                     },
                   ),
@@ -346,7 +351,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('0', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      _controller.text=_controller.text+"0";
+                      Utils.controller.text=Utils.controller.text+"0";
                     },
                   ),
                 ),
