@@ -62,7 +62,7 @@ class _CalculatorState extends State<Calculator> {
                     onPressed: () {
                       setState(() {
                         Utils.controller.clear();
-                        Func().add();
+
 
                       });
                     },
@@ -326,7 +326,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('+', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       Utils.controller.text=Utils.controller.text+"+";
-
+                      Func.add();
                     },
                   ),
                 ),
