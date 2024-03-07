@@ -5,10 +5,11 @@ import '../utils/utils.dart';
 
 class Func{
 
-  static var adds=0;
+  static var adds;
 
- static void add(){
-    Utils.controller.text=(adds+int.parse(Utils.controller.text)) as String;
+ static String add(){
+   Utils.controller.text=Utils.controller.text+adds;
+    return Utils.controller.text;
     log(Utils.controller.text);
   }
 }
