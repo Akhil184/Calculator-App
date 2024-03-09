@@ -16,7 +16,7 @@ class _CalculatorState extends State<Calculator> {
 
   static TextEditingController controller = TextEditingController();
   static var add = 0;
-  var input=[];
+  static var input=[];
 
   @override
   Widget build(BuildContext context) {
@@ -81,7 +81,8 @@ class _CalculatorState extends State<Calculator> {
                     onPressed: () {
                       setState(() {
                         controller.text = "2";
-//
+                        input.add(2);
+
                       });
                     },
                   ),
@@ -98,7 +99,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('%', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "%";
-                      input.add(controller.text);
+                      input.add('%');
                     },
                   ),
                 ),
@@ -114,7 +115,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('/', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "/";
-
+                     input.add('/');
                     },
                   ),
                 ),
@@ -139,6 +140,7 @@ class _CalculatorState extends State<Calculator> {
                     onPressed: () {
                       setState(() {
                         controller.text = controller.text + "7";
+                        input.add(7);
                       });
                     },
                   ),
@@ -156,6 +158,7 @@ class _CalculatorState extends State<Calculator> {
                     onPressed: () {
                       setState(() {
                         controller.text = controller.text + "8";
+                        input.add(8);
                       });
                     },
                   ),
@@ -172,6 +175,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('9', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "9";
+                      input.add(9);
                     },
                   ),
                 ),
@@ -187,6 +191,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('*', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "*";
+                      input.add('*');
                     },
                   ),
                 ),
@@ -210,6 +215,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('4', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "4";
+                      input.add(4);
                     },
                   ),
                 ),
@@ -225,6 +231,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('5', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "5";
+                      input.add(5);
                     },
                   ),
                 ),
@@ -240,6 +247,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('6', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "6";
+                      input.add('6');
                     },
                   ),
                 ),
@@ -255,6 +263,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('-', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "-";
+                      input.add('-');
                     },
                   ),
                 ),
@@ -280,6 +289,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('1', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "1";
+                      input.add(1);
                     },
                   ),
                 ),
@@ -295,6 +305,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('2', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "2";
+                      input.add(2);
                     },
                   ),
                 ),
@@ -310,6 +321,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('3', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "3";
+                      input.add(3);
                     },
                   ),
                 ),
@@ -325,9 +337,9 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('+', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       // add=int.parse(controller.text)+add;
-                      add=1;
+                      // add=1;
                       controller.text = controller.text + "+";
-
+input.add('+');
                     },
                   ),
                 ),
@@ -353,6 +365,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('0', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "0";
+                      input.add(0);
                     },
                   ),
                 ),
@@ -396,16 +409,15 @@ class _CalculatorState extends State<Calculator> {
     );
   }
 
-  static void addFun() {
-    // controller.text = int.parse(controller.text) + add as String;
-    // return Calculator().controller.text;
-  }
 
   static void result() {
-    if(add==1){
-      addFun();
-    }
+    // controller.clear();
+    AlertDialog(title: Text("Sample Alert Dialog"));
+    for(int i=0;i<=input.length;i++) {
+      controller.text = input[i];
+
     // controller.text = int.parse(controller.text) + add as String;
-    // return Calculator().controller.text;
+      // return Calculator().controller.text;
+    }
   }
 }
