@@ -13,8 +13,8 @@ class Func{
  //    log(Utils.controller.text);
  //  }
 
-  static String result(){
-    Calculator().controller.text=adds;
-    return Calculator().controller.text;
-  }
+ // static void result(){
+ //    Calculator().controller.text=adds;
+ //    // return Calculator().controller.text;
+ //  }
 }
