@@ -5,7 +5,8 @@ import '../models/calculator_func.dart';
 import '../utils/utils.dart';
 
 class Calculator extends StatefulWidget {
-  const Calculator({super.key});
+  TextEditingController controller = TextEditingController();
+
 
   @override
   State<Calculator> createState() => _CalculatorState();
@@ -36,7 +37,7 @@ class _CalculatorState extends State<Calculator> {
             style:TextStyle(
               fontSize:50,
             ),
-            controller:Utils.controller,
+            controller:widget.controller,
             decoration: InputDecoration(
               border: InputBorder.none,
               labelText: '',
@@ -61,7 +62,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('AC', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       setState(() {
-                        Utils.controller.clear();
+                        widget.controller.clear();
 
 
                       });
@@ -80,7 +81,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('+/-', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       setState(() {
-                        Utils.controller.text="2";
+                        widget.controller.text="2";
 //
                       });
                     },
@@ -97,7 +98,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('%', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"%";
+                      widget.controller.text=widget.controller.text+"%";
                     },
                   ),
                 ),
@@ -112,7 +113,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('/', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"/";
+                      widget.controller.text=widget.controller.text+"/";
                     },
                   ),
                 ),
@@ -136,7 +137,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('7', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       setState(() {
-                        Utils.controller.text=Utils.controller.text+"7";
+                       widget.controller.text=widget.controller.text+"7";
 
                       });
 
@@ -155,7 +156,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('8', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       setState(() {
-                        Utils.controller.text=Utils.controller.text+"8";
+                        widget.controller.text=widget.controller.text+"8";
 
                       });
                     },
@@ -172,7 +173,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('9', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"9";
+                      widget.controller.text=widget.controller.text+"9";
                     },
                   ),
                 ),
@@ -187,7 +188,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('*', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"*";
+                      widget.controller.text=widget.controller.text+"*";
                     },
                   ),
                 ),
@@ -210,7 +211,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('4', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"4";
+                      widget.controller.text=widget.controller.text+"4";
                     },
                   ),
                 ),
@@ -225,7 +226,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('5', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"5";
+                      widget.controller.text=widget.controller.text+"5";
                     },
                   ),
                 ),
@@ -240,7 +241,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('6', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"6";
+                      widget.controller.text=widget.controller.text+"6";
                     },
                   ),
                 ),
@@ -255,7 +256,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('-', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"-";
+                      widget.controller.text=widget.controller.text+"-";
                     },
                   ),
                 ),
@@ -280,7 +281,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('1', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"1";
+                      widget.controller.text=widget.controller.text+"1";
                     },
                   ),
                 ),
@@ -295,7 +296,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('2', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"2";
+                      widget.controller.text=widget.controller.text+"2";
                     },
                   ),
                 ),
@@ -310,7 +311,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('3', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"3";
+                      widget.controller.text=widget.controller.text+"3";
                     },
                   ),
                 ),
@@ -325,8 +326,8 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('+', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"+";
-                      Func.add();
+                      widget.controller.text=widget.controller.text+"+";
+
                     },
                   ),
                 ),
@@ -351,7 +352,7 @@ class _CalculatorState extends State<Calculator> {
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('0', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
-                      Utils.controller.text=Utils.controller.text+"0";
+                      widget.controller.text=widget.controller.text+"0";
                     },
                   ),
                 ),
@@ -378,7 +379,9 @@ class _CalculatorState extends State<Calculator> {
                         backgroundColor: Colors.green,
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('=', style: TextStyle(fontSize: 20.0),),
-                    onPressed: () {},
+                    onPressed: () {
+                      Func.result();
+                    },
                   ),
                 ),
 
