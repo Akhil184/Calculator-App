@@ -1,8 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../models/calculator_func.dart';
-import '../utils/utils.dart';
 
 class Calculator extends StatefulWidget {
 
@@ -16,7 +14,7 @@ class _CalculatorState extends State<Calculator> {
 
   static TextEditingController controller = TextEditingController();
   static var add;
-  static List input=[2,3,4,5,'1'];
+  static List input=[];
 
   @override
   Widget build(BuildContext context) {
@@ -411,7 +409,7 @@ input.add('+');
 
 
   static void result() {
-    controller.clear();
+    // controller.clear();
     add=input;
      controller.text=add;
     // controller.text = int.parse(controller.text) + add as String;
