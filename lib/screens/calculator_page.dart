@@ -15,8 +15,8 @@ class Calculator extends StatefulWidget {
 class _CalculatorState extends State<Calculator> {
 
   static TextEditingController controller = TextEditingController();
-  static var add = 0;
-  static var input=[];
+  static var add;
+  static List input=[2,3,4,5,'1'];
 
   @override
   Widget build(BuildContext context) {
@@ -411,13 +411,10 @@ input.add('+');
 
 
   static void result() {
-    // controller.clear();
-    AlertDialog(title: Text("Sample Alert Dialog"));
-    for(int i=0;i<=input.length;i++) {
-      controller.text = input[i];
-
+    controller.clear();
+    add=input;
+     controller.text=add;
     // controller.text = int.parse(controller.text) + add as String;
       // return Calculator().controller.text;
     }
-  }
 }
