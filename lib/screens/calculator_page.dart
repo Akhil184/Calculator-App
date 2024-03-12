@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:math_expressions/math_expressions.dart';
 
 
 class Calculator extends StatefulWidget {
@@ -13,8 +14,7 @@ class Calculator extends StatefulWidget {
 class _CalculatorState extends State<Calculator> {
 
   static TextEditingController controller = TextEditingController();
-  static var add;
-  static List input=[];
+  static List<String> input=[];
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +79,7 @@ class _CalculatorState extends State<Calculator> {
                     onPressed: () {
                       setState(() {
                         controller.text = "2";
-                        input.add(2);
+                        input.add('2');
 
                       });
                     },
@@ -138,7 +138,7 @@ class _CalculatorState extends State<Calculator> {
                     onPressed: () {
                       setState(() {
                         controller.text = controller.text + "7";
-                        input.add(7);
+                        input.add('7');
                       });
                     },
                   ),
@@ -156,7 +156,7 @@ class _CalculatorState extends State<Calculator> {
                     onPressed: () {
                       setState(() {
                         controller.text = controller.text + "8";
-                        input.add(8);
+                        input.add('8');
                       });
                     },
                   ),
@@ -173,7 +173,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('9', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "9";
-                      input.add(9);
+                      input.add('9');
                     },
                   ),
                 ),
@@ -213,7 +213,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('4', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "4";
-                      input.add(4);
+                      input.add('4');
                     },
                   ),
                 ),
@@ -229,7 +229,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('5', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "5";
-                      input.add(5);
+                      input.add('5');
                     },
                   ),
                 ),
@@ -287,7 +287,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('1', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "1";
-                      input.add(1);
+                      input.add('1');
                     },
                   ),
                 ),
@@ -303,7 +303,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('2', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "2";
-                      input.add(2);
+                      input.add('2');
                     },
                   ),
                 ),
@@ -319,7 +319,7 @@ class _CalculatorState extends State<Calculator> {
                     child: Text('3', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "3";
-                      input.add(3);
+                      input.add('3');
                     },
                   ),
                 ),
@@ -363,7 +363,7 @@ input.add('+');
                     child: Text('0', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
                       controller.text = controller.text + "0";
-                      input.add(0);
+                      input.add('0');
                     },
                   ),
                 ),
@@ -409,10 +409,15 @@ input.add('+');
 
 
   static void result() {
-    // controller.clear();
-    add=input;
-     controller.text=add;
-    // controller.text = int.parse(controller.text) + add as String;
-      // return Calculator().controller.text;
-    }
+    String finaluserinput = controller.text;
+    finaluserinput = controller.text.replaceAll('x', '*');
+
+    Parser p = Parser();
+    Expression exp = p.parse(finaluserinput);
+    ContextModel cm = ContextModel();
+    double eval = exp.evaluate(EvaluationType.REAL, cm);
+    controller.text = eval.toString();
+  }
+
+
 }
