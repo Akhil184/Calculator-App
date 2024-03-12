@@ -5,8 +5,6 @@ import 'package:math_expressions/math_expressions.dart';
 
 class Calculator extends StatefulWidget {
 
-
-
   @override
   State<Calculator> createState() => _CalculatorState();
 }
