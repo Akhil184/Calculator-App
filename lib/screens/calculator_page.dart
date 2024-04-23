@@ -17,21 +17,22 @@ class _CalculatorState extends State<Calculator> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor:Colors.deepPurple,
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Theme
-            .of(context)
-            .colorScheme
-            .inversePrimary,
+        backgroundColor:Colors.blueAccent[100],
 
         title: Text('Calculator'),
       ),
       body: Column(
+
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         children: [
           TextField(
+
             style: TextStyle(
+
               fontSize: 50,
             ),
             controller: controller,
@@ -54,7 +55,7 @@ class _CalculatorState extends State<Calculator> {
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
                         foregroundColor: Colors.yellow,
-                        backgroundColor: Colors.green,
+                        backgroundColor: Colors.orange,
                         textStyle: const TextStyle(fontSize: 20)),
                     child: Text('AC', style: TextStyle(fontSize: 20.0),),
                     onPressed: () {
