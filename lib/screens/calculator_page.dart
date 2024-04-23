@@ -13,9 +13,11 @@ class _CalculatorState extends State<Calculator> {
 
   static TextEditingController controller = TextEditingController();
   static List<String> input=[];
+  var a;
 
   @override
   Widget build(BuildContext context) {
+    var a=MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor:Colors.deepPurple,
       appBar: AppBar(
@@ -50,7 +52,7 @@ class _CalculatorState extends State<Calculator> {
 
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width:a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -67,7 +69,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width:a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -86,7 +88,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width:a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -102,7 +104,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width:a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -126,7 +128,7 @@ class _CalculatorState extends State<Calculator> {
 
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width:a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -144,7 +146,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width:a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -162,7 +164,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width: a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -178,7 +180,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width: a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -202,7 +204,7 @@ class _CalculatorState extends State<Calculator> {
 
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width: a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -218,7 +220,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width: a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -234,7 +236,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width: a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -250,7 +252,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width: a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -276,7 +278,7 @@ class _CalculatorState extends State<Calculator> {
 
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width: a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -292,7 +294,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width: a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -308,7 +310,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width: a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -324,7 +326,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width: a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -352,7 +354,7 @@ input.add('+');
 
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 170,
+                  width:a.width*0.4,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -368,7 +370,7 @@ input.add('+');
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width:a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
@@ -381,7 +383,7 @@ input.add('+');
                 ),
                 Container(
                   margin: EdgeInsets.all(5),
-                  width: 80,
+                  width: a.width*0.2,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
