@@ -46,8 +46,9 @@ class _CalculatorState extends State<Calculator> {
           ),
 
           Padding(
-            padding: EdgeInsets.only(top: 250, left: 5),
-            child: Row(
+            padding: EdgeInsets.only(top:a.height*0.3, left: 5),
+            child:Expanded(
+            child:Row(
               children: [
 
                 Container(
@@ -120,6 +121,7 @@ class _CalculatorState extends State<Calculator> {
                 ),
               ],
             ),
+          ),
           ),
           Padding(
             padding: EdgeInsets.only(top: 0, left: 5),
