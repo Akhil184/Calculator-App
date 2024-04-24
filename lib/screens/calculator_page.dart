@@ -354,7 +354,7 @@ input.add('+');
 
                 Container(
                   margin: EdgeInsets.all(5),
-                  width:a.width*0.4,
+                  width:a.width*0.43,
                   child: TextButton(
                     style: TextButton.styleFrom(
                         padding: const EdgeInsets.all(10),
